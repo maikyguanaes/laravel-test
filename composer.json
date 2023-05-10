@@ -13,7 +13,8 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
-        "laravel/pint": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.16",
+        "laravel/pint": "^1.10",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
@@ -45,7 +46,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "phpcs-fixer-check": "php-cs-fixer fix --config=.php-cs-fixer.php -v --dry-run --using-cache=no -- app",
+        "phpcs-fixer-fix": "php-cs-fixer fix --config=.php-cs-fixer.php -v --using-cache=no -- app",
+        "pint-check": "pint -v --test --preset laravel",
+        "pint-fix": "pint -v",
+        "pint-dirty": "pint --dirty",
+        "tests": "phpunit --colors=always --testdox -vv"
     },
     "extra": {
         "laravel": {
