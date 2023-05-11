@@ -1,19 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+use Illuminate\Http\Response;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+uses()->group('example');
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-}
+test('get /')
+    ->get('/')
+    ->assertStatus(Response::HTTP_OK);
